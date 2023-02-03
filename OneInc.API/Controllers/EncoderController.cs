@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using OneInc.API.Api.Queries;
 using OneInc.API.Interfaces;
@@ -10,7 +8,6 @@ namespace OneInc.API.Controllers;
 [Route("api/[controller]")]
 public class EncoderController : ControllerBase
 {
-
     private readonly ILogger<EncoderController> _logger;
     private readonly IEncodingService _service;
 
@@ -32,24 +29,6 @@ public class EncoderController : ControllerBase
         {
             _logger.LogError(nameof(Delay));
             throw;
-        }
-    }
-    
-    async IAsyncEnumerable<int> FetchItems()
-    {
-        for (int i = 1; i <= 10; i++)
-        {
-            await Task.Delay(1000);
-            yield return i;
-        }
-    }
-    
-    async IAsyncEnumerable<string> FetchItemsChars(IEnumerable<char> word)
-    { 
-        foreach (char c in word)
-        {
-            await Task.Delay(1000);
-            yield return c.ToString();
         }
     }
 }

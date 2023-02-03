@@ -2,7 +2,7 @@
 
 namespace OneInc.API.Services;
 
-public class RandomCollectionDelayer<T> : IDelayableCollection<T>
+public class RandomTimeCollectionDelayer<T> : IDelayableCollection<T>
 {
     private readonly Random _randomizer = new();
 

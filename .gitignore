@@ -27,5 +27,6 @@ dist-ssr
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
+
+OneInc.sln.DotSettings.user

@@ -19,5 +19,4 @@ public class OneIncEncodingService : IEncodingService
         var collection = encoded.ToCharArray().AsEnumerable();
         return _delayer.DelayAsync(collection, cancellationToken);
     }
-
 }
