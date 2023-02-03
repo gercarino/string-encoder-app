@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  oneinc.api:
+    image: ${DOCKER_REGISTRY-}oneincapi
+    container_name: oneincapi
+    build:
+      context: .
+      dockerfile: OneInc.API/Dockerfile
+    ports:
+    - "5000:5000" 
+    - "5001:5001"
+  oneinc.ui:
+    image: ${DOCKER_REGISTRY-}oneincui
+    container_name: oneincui
+    build:
+      context: ./OneInc.UI      
+    ports:
+     - "5173:5173"
+    depends_on:
+    - oneinc.api
