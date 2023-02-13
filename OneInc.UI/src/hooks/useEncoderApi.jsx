@@ -45,7 +45,7 @@ export const useEncoderApi = (value) => {
         setStatus(encoderStatus.finished);
       });
     }
-  }, [value, status]);
+  }, [value]);
 
   return {
     abort,
